@@ -205,14 +205,14 @@ function mouseDragged(){
         var dateTime = responseJSON.datetime
         var hour = dateTime.slice(11, 13)
      
-        if (hour>=06 && hour<=18) {
+        if (hour>=06 && hour<=17) {
         
-         bg = "back2.png"
+         bg = "back.png"
        
           
               }
           else{
-             bg = "back.png"
+             bg = "back2.png"
   
           }
               backImage = loadImage(bg)
