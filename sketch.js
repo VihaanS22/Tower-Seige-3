@@ -10,6 +10,7 @@ var tree
 var backImage
 var mango, mango1, mango2, mango3, mango4, mango5, mango6, mango7, mango8, mango9
 var mango10, mango11, mango12, mango13, mango14, mango15, mango16, mango17, mango18
+var enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7
 
 var bg = "back.png"
 
@@ -67,9 +68,13 @@ mango16 = new Mango(1310, 80, 20, 40)
 mango17 = new Mango(1390, 80, 20, 40)
 mango18 = new Mango(1230, 80, 20, 40)
 //
-
-
-
+enemy1 = new Enemy(850, 370, 20, 40)
+enemy2 = new Enemy(910, 300, 20, 40)
+enemy3 = new Enemy(970, 230, 20, 40)
+enemy4 = new Enemy(1030, 190, 20, 40)
+enemy5 = new Enemy(1230, 50, 20, 40)
+enemy6 = new Enemy(1310, 50, 20, 40)
+enemy7 = new Enemy(1390, 50, 20, 40)
 
 
 stone = new Stone(400, 490, 20)
@@ -155,8 +160,13 @@ mango10.Score();
   mango18.display();
   mango18.Score();
  
-  
-
+  enemy1.display();
+  enemy2.display();
+  enemy3.display();
+  enemy4.display();
+  enemy5.display();
+  enemy6.display();
+  enemy7.display();
   drawSprites();
  
 }
@@ -190,19 +200,19 @@ function mouseDragged(){
 
       async function getBackgroundImg() {
 
-        var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata")
+        var response = await fetch("https://worldtimeapi.org/api/timezone/Asia/Kolkata")
         var responseJSON = await response.json()
         var dateTime = responseJSON.datetime
         var hour = dateTime.slice(11, 13)
      
         if (hour>=06 && hour<=18) {
         
-         bg = "back.png"
+         bg = "back2.png"
        
           
               }
           else{
-             bg = "back2.png"
+             bg = "back.png"
   
           }
               backImage = loadImage(bg)
